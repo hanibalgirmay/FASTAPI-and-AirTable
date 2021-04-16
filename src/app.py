@@ -23,9 +23,6 @@ BASE_DIR = pathlib.Path(__file__).parent #src
 app = FastAPI()
 templates = Jinja2Templates(directory = BASE_DIR / "templates")
 
-print('Starting')
-print("AIRTABLE_BASE_ID",os.environ.get("AIRTABLE_BASE_ID"))
-
 @app.get('/')
 def home_page(request: Request):
     return templates.TemplateResponse('home.html',{"request":request})
